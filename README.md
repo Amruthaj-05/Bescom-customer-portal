@@ -42,9 +42,3 @@ The BESCOM Customer Portal is a web-based application developed using Flask that
 SQLite is used as the database.
 Schema is available in:
 database/schema.sql
-
-## 📸 Screenshots
-(Add project.jpg here if needed)
-
-## 📄 License
-This project is for educational purposes.
