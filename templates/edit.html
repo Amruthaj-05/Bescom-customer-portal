@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BESCOM CUSTOMER PORTAL</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+    }
+
+    .navbar {
+      background-color: #003366;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background-color: #00509e;
+      border-radius: 5px;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1604079621443-4bd2f03bb18e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      height: 70vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 10px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background-color: #ffaa00;
+      color: black;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e69500;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 50px 20px;
+      background-color: #ffffff;
+      flex-wrap: wrap;
+    }
+
+    .feature-box {
+      background-color: #e6f0ff;
+      border-left: 5px solid #003366;
+      padding: 20px;
+      max-width: 300px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-box h3 {
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    .feature-box p {
+      font-size: 1rem;
+      color: #333;
+    }
+    .container {
+  max-width: 1500px;
+  margin: 50px auto;
+  background: #fffffe;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+input, button {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+body {
+  background: url('/static/project.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+  </style>
+</head>
+<body> 
+  <header>
+    <div class="navbar">
+      <div class="logo">⚡ BESCOM</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li> 
+        <li><a href="/index" class="active">Login</a></li>
+        <li><a href="/help">Help</a></li>
+        <li><a href="/aboutus">About Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2 style="margin-bottom: 20px;">Edit Customer Details</h2>
+    <form action="/update" method="post" style="display: grid; grid-template-columns: 1fr 2fr; gap: 10px; align-items: center;">
+      <label>Customer Id:</label>
+      <input type="text" name="customer_id" value="{{ customer[1] }}" readonly>
+
+      <label>Name:</label>
+      <input type="text" name="name" value="{{ customer[2] }}" readonly>
+
+      <label>Address:</label>
+      <input type="text" name="address" value="{{ customer[3] }}" readonly>
+
+      <label>Phone:</label>
+      <input type="text" name="phone" value="{{ customer[4] }}" readonly>
+
+      <label>Email:</label>
+      <input type="email" name="email" value="{{ customer[5] }}" readonly>
+
+      <label>Meter ID:</label>
+      <input type="text" name="meter_id" value="{{ customer[6] }}" required>
+
+      <label>Installation Date:</label>
+      <input type="text" name="Installation_date" value="{{ customer[7] }}" required>
+
+      <label>Meter Type:</label>
+      <input type="text" name="Meter_type" value="{{ customer[8] }}" required>
+
+      <label>Consumption ID:</label>
+      <input type="text" name="Consumption_id" value="{{ customer[9] }}" required >
+
+      <label>Consumption Date:</label>
+      <input type="text" name="Consumption_date" value="{{ customer[10] }}" required>
+
+      <label>Units Consumed:</label>
+      <input type="text" name="Units_Consumed" value="{{ customer[11] }}" required>
+
+      <label>Bill Id:</label>
+      <input type="text" name="Bill_Id" value="{{ customer[12] }}" required>
+
+      <label>Amount:</label>
+      <input type="text" name="Amount" value="{{ customer[13] }}" required>
+
+      <label>Due Date:</label>
+      <input type="text" name="Due_date" value="{{ customer[14] }}" required>
+
+      <label>Status:</label>
+      <input type="text" name="Status" value="{{ customer[15] }}" required>
+
+      <label>Payment ID:</label>
+      <input type="text" name="Payment_id" value="{{ customer[16] }}" required>
+
+      <label>Payment Date:</label>
+      <input type="text" name="Payment_date" value="{{ customer[17] }}" required>
+
+      <label>Payment Mode:</label>
+      <input type="text" name="Payment_mode" value="{{ customer[18] }}" required>
+
+      <label>Transaction ID:</label>
+      <input type="text" name="Transaction_id" value="{{ customer[19] }}" required>
+
+      <div></div> <!-- empty cell for alignment -->
+      <button type="submit" style="grid-column: span 2;">Update</button>
+    </form>
+  </div>
+</body>
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BESCOM CUSTOMER PORTAL</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+    }
+
+    .navbar {
+      background-color: #003366;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background-color: #00509e;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 100px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    strong {
+      color: #003366;
+    }
+    button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+}
+input, button {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+} 
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}  
+body {
+  background: url('/static/project.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">⚡ BESCOM</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/index" class="active">Login</a></li>
+        <li><a href="/help">Help</a></li>
+        <li><a href="/aboutus">About Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Welcome, {{ name }}!</h2>
+    <p><strong>Customer ID:</strong> {{ customer_id }}</p>
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Address:</strong> {{ address }}</p>
+    <p><strong>Phone Number:</strong> {{ phone }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Meter ID:</strong> {{ meter_id}}</p>
+    <p><strong>Installation Date:</strong> {{ Installation_date }}</p>
+    <p><strong>Meter Type:</strong> {{ Meter_type }}</p>
+    <p><strong>Consumption ID:</strong> {{ Consumption_id }}</p>
+    <p><strong>Consumption Date:</strong> {{ Consumption_date }}</p>
+    <p><strong>Units Consumed:</strong> {{ Units_Consumed }}</p>
+    <p><strong>Bill Id:</strong> {{ Bill_Id }}</p>
+    <p><strong>Amount:</strong> ₹{{ Amount }}</p>
+    <p><strong>Due Date:</strong> {{ Due_date }}</p>
+    <p><strong>Status:</strong> {{ Status }}</p>
+    <p><strong>Payment ID:</strong> {{ Payment_id }}</p>
+    <p><strong>Payment Date:</strong> {{ Payment_date }}</p>
+    <p><strong>Payment Mode:</strong> {{ Payment_mode }}</p>
+    <p><strong>Transaction ID:</strong> {{ Transaction_id }}</p>
+    <form action="/logout" method="post">
+      <button type="logout">Logout</button> 
+    </form>
+    
+  </div>
+
+  <footer>
+    &copy; 2025 BESCOM - All Rights Reserved
+  </footer>
+</body>
+</html>
